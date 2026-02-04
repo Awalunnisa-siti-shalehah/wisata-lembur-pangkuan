@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembur Pangkuan</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f6faf8;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("images (1).jpg") center/cover no-repeat;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+      padding: 20px 0;
+    }
+
+    section {
+      padding: 20px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #7ED7A3;
+      color: #033;
+    }
+
+    footer {
+      background: #1f6f52;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 30px;
+    }
+
+    aside {
+      background: #e7f6f1;
+      padding: 15px;
+      border-left: 6px solid #2E8B57;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 85%;
+    }
+
+    @media (max-width: 600px) {
+      nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="home">
+  <h1><em>Lembur Pangkuan</em></h1>
+  <p>Selamat datang!</p>
+  <nav>
+    <ul>
+      <li><a href="#about">Informasi</a></li>
+      <li><a href="#services">Fasilitas</a></li>
+      <li><a href="#portfolio">Media</a></li>
+      <li><a href="#pricing">Harga Tiket</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section id="about">
+    <article class="card">
+      <h3 style="background-color:#C1E1C1;">Tentang <em>Lembur Pangkuan</em></h3>
+      <hr>
+      <p>
+        <strong>Lembur Pakuan</strong> di Desa Sukasari, Dawuan, Subang, adalah destinasi wisata pedesaan berbasis budaya Sunda
+        yang digagas oleh <strong>Dedi Mulyadi</strong>. Kampung ini menawarkan
+        <u>suasana asri, bersih, bebas sampah, dan sarat ornamen tradisional.</u>
+      </p>
+      <p style="color:MediumSeaGreen;">
+        Tempat ini menjadi viral karena menawarkan pengalaman unik berjalan-jalan, kuliner lokal,
+        dan spot foto estetis di lingkungan pedesaan yang tertata rapi.
+      </p>
+      <p>
+        Berdiri sejak tahun 2008–2018 dan dibangun secara bertahap oleh Dedi Mulyadi sejak ia menjabat
+        sebagai Bupati Purwakarta.
+      </p>
+      <p>
+        <strong>Visi:</strong> Dibangun sebagai bentuk sumbangsih kepada kampung halaman yang
+        aslinya bernama Kampung Sukadaya.
+      </p>
+    </article>
+  </section>
+
+  <section id="services">
+    <article class="card">
+      <details>
+        <summary><strong>Layanan & Fasilitas</strong></summary>
+
+        <p><strong>Fasilitas Wisata:</strong></p>
+        <ul>
+          <li>Spot foto (Taman Bunisora, Taman Campernik)</li>
+          <li>Area jalan santai</li>
+          <li>Saung / gazebo</li>
+          <li>Lahan parkir</li>
+          <li>Toilet</li>
+          <li>Toko cenderamata</li>
+        </ul>
+
+        <p><strong>Kuliner:</strong></p>
+        <ul>
+          <li>Es kopi</li>
+          <li>Sate maranggi</li>
+          <li>Berbagai camilan tradisional</li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  
+  <section id="portfolio" class="gallery">
+    <article class="card">
+      <h2>Galeri Lembur Pangkuan</h2>
+
+      <div class="slider-box">
+        <button id="kiri">‹</button>
+        <img id="galeriImg" src="images (1).jpeg" alt="Pemandangan Lembur Pangkuan">
+        <button id="kanan">›</button>
+      </div>
+
+      <script>
+        let posisi = 0;
+        let galeri = [
+          "images (1).jpg",
+          "images (2).jpg",
+          "images (3).jpg"
+        ];
+
+        kiri.onclick = () => {
+          posisi = (posisi - 1 + galeri.length) % galeri.length;
+          galeriImg.src = galeri[posisi];
+        };
+
+        kanan.onclick = () => {
+          posisi = (posisi + 1) % galeri.length;
+          galeriImg.src = galeri[posisi];
+        };
+      </script>
+
+      <h3 style="background-color:#C1E1C1;"
+      >Video Wisata Lembur Pangkuan</h3>
+    <iframe width="100%" height="215"
+  src="https://www.youtube.com/embed/wBI0VN2W5Yk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+  </video>
+      <h3>Sound</h3>
+      <audio controls>
+        <source src="Sabilulungan.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung tag audio.
+      </audio>
+    </article>
+  </section>
+
+  <section id="pricing">
+    <article class="card">
+      <h2>Daftar Harga Tiket</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Jenis Paket</th>
+            <th>Durasi</th>
+            <th>Harga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biaya tiket masuk</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Biaya paket tur</td>
+            <td>-</td>
+            <td>Rp275.000 – Rp350.000</td>
+          </tr>
+          <tr>
+            <td>Biaya parkir</td>
+            <td>-</td>
+            <td>Rp5.000</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">
+              <strong>Catatan:</strong> Biaya tiket masuk gratis karena tempat ini merupakan area
+              pemukiman warga sekaligus kediaman pribadi. Pengunjung diharapkan tetap menjaga kesopanan.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </article>
+  </section>
+
+  <section id="lokasi">
+    <article class="card">
+      <h2>Lokasi</h2>
+      <p>
+        <a href="https://maps.app.goo.gl/7YDauuSnxMpmkpGA6" target="_blank">
+          Lihat lokasi di Google Maps
+        </a>
+      </p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Website Wisata Lembur Pangkuan</p>
+</footer>
+
+</body>
+    </html>
+      
